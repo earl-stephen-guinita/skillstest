@@ -43,7 +43,7 @@ def edit(id):
         course = request.form["course"]
         yrLvl = request.form["yearLevel"]
         conn.execute("UPDATE students SET firstName=?, lastName=?, course=?, yearLevel=? WHERE id=?",
-                     (fName, lName, course, yrLvl))
+                     (fName, lName, course, yrLvl, id))
         conn.commit()
         conn.close()
         return redirect(url_for("index"))
