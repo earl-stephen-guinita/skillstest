@@ -42,7 +42,7 @@ def edit(id):
         lName = request.form["lastName"]
         position = request.form["position"]
         salary = request.form["salary"]
-        conn.execute("UPDATE employees SET firstname=?, lastName=?, position=?, salary=? WHERE id=?",
+        conn.execute("UPDATE employees SET firstName=?, lastName=?, position=?, salary=? WHERE id=?",
                      (fName, lName, position, salary, id))
         conn.commit()
         conn.close()
