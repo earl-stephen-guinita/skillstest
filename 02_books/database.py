@@ -15,7 +15,7 @@ def init_db():
             title TEXT NOT NULL,
             author TEXT NOT NULL,
             genre TEXT NOT NULL,
-            yearPublished INTEGER NOT NULL         
+            yearPublished TEXT NOT NULL         
         )
     """)
     conn.commit()
