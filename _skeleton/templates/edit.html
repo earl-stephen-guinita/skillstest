@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Item</h1>
+    <form method="POST">
+        <input type="text" name="name" value="{{ item['name'] }}"><br>
+        <input type="text" name="description" value="{{ item['description'] }}"><br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>
