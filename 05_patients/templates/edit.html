@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Patient</h1>
+    <form method="POST">
+        <input type="text" name="firstName" value="{{ patient['firstName'] }}"><br>
+        <input type="text" name="lastName" value="{{ patient['lastName'] }}"><br>
+        <input type="date" name="birthDate" value="{{ patient['birthDate'] }}"><br>
+        <input type="number" name="contactNumber" value="{{ patient['contactNumber'] }}"><br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>
