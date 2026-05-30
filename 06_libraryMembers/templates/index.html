@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>App</title></head>
+<body>
+    <h1>Library Members</h1>
+    <a href="/add">Add New</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Membership Date</th>
+            <th>Actions</th>
+        </tr>
+        {% for libraryMember in libraryMembers %}
+        <tr>
+            <td>{{ libraryMember["id"] }}</td>
+            <td>{{ libraryMember["firstName"] }}</td>
+            <td>{{ libraryMember["lastName"] }}</td>
+            <td>{{ libraryMember["email"] }}</td>
+            <td>{{ libraryMember["membershipDate"] }}</td>
+            <td>
+                <a href="/edit/{{ libraryMember['id'] }}">Edit</a>
+                <a href="/delete/{{ libraryMember['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

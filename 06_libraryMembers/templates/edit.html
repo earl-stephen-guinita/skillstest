@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add</title></head>
+<body>
+    <h1>Add Library Member</h1>
+    <form method="POST">
+        <input type="text" name="firstName" value="{{ libraryMember['firstName'] }}"><br>
+        <input type="text" name="lastName" value="{{ libraryMember['lastName'] }}"><br>
+        <input type="email" name="email" value="{{ libraryMember['email'] }}"><br>
+        <input type="date" name="membershipDate" value="{{ libraryMember['membershipDate'] }}"><br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>
