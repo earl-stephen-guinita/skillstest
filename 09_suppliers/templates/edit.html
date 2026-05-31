@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Supplier</h1>
+    <form method="POST">
+        <input type="text" name="supplierName" value="{{ supplier['supplierName'] }}"><br>
+        <input type="text" name="contactPerson" value="{{ supplier['contactPerson'] }}"><br>
+        <input type="tel" name="contactNumber" value="{{ supplier['contactNumber'] }}"><br>
+        <input type="text" name="address" value="{{ supplier['address'] }}"><br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>

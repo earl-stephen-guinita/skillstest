@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>App</title></head>
+<body>
+    <h1>Suppliers</h1>
+    <a href="/add">Add New</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Supplier Name</th>
+            <th>Contact Person</th>
+            <th>Contact Number</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+        {% for supplier in suppliers %}
+        <tr>
+            <td>{{ supplier["id"] }}</td>
+            <td>{{ supplier["supplierName"] }}</td>
+            <td>{{ supplier["contactPerson"] }}</td>
+            <td>{{ supplier["contactNumber"] }}</td>
+            <td>{{ supplier["address"] }}</td>
+            <td>
+                <a href="/edit/{{ supplier['id'] }}">Edit</a>
+                <a href="/delete/{{ supplier['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
