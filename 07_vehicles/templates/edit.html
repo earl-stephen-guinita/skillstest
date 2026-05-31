@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Vehicle</h1>
+    <form method="POST">
+        <input type="text" name="plateNumber" value="{{ vehicle['plateNumber'] }}"><br>
+        <input type="text" name="owner" value="{{ vehicle['owner'] }}"><br>
+        <input type="text" name="brand" value="{{ vehicle['brand'] }}"><br>
+        <input type="text" name="type" value="{{ vehicle['type']}}"><br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>

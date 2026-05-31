@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>App</title></head>
+<body>
+    <h1>Vehicles</h1>
+    <a href="/add">Add New</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Plate Number</th>
+            <th>Owner</th>
+            <th>Brand</th>
+            <th>Type</th>
+            <th>Actions</th>
+        </tr>
+        {% for vehicle in vehicles %}
+        <tr>
+            <td>{{ vehicle["id"] }}</td>
+            <td>{{ vehicle["plateNumber"] }}</td>
+            <td>{{ vehicle["owner"] }}</td>
+            <td>{{ vehicle["brand"] }}</td>
+            <td>{{ vehicle["type"] }}</td>
+            <td>
+                <a href="/edit/{{ vehicle['id'] }}">Edit</a>
+                <a href="/delete/{{ vehicle['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
