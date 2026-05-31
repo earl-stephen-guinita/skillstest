@@ -22,10 +22,10 @@ def add():
         plateNum = request.form["plateNumber"]
         owner = request.form["owner"]
         brand = request.form["brand"]
-        type = request.form["type"]
+        vehicleType = request.form["type"]
         conn = get_db()
         conn.execute("INSERT INTO vehicles (plateNumber, owner, brand, type) VALUES (?, ?, ?, ?)",
-                     (plateNum, owner, brand, type))
+                     (plateNum, owner, brand, vehicleType))
         conn.commit()
         conn.close()
         return redirect(url_for("index"))
@@ -41,9 +41,9 @@ def edit(id):
         plateNum = request.form["plateNumber"]
         owner = request.form["owner"]
         brand = request.form["brand"]
-        type = request.form["type"]
+        vehicleType = request.form["type"]
         conn.execute("UPDATE vehicles SET plateNumber=?, owner=?, brand=?, type=? WHERE id=?",
-                     (plateNum, owner, brand, type, id))
+                     (plateNum, owner, brand, vehicleType, id))
         conn.commit()
         conn.close()
         return redirect(url_for("index"))
