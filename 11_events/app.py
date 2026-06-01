@@ -37,7 +37,7 @@ def add():
 @app.route("/edit/<int:id>", methods=["GET", "POST"])
 def edit(id):
     conn = get_db()
-    if request.form == "POST":
+    if request.method == "POST":
         name = request.form["eventName"]
         loc = request.form["location"]
         date = request.form["date"]
