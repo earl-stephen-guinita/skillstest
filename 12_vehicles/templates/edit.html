@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Vehicle</h1>
+    <form method="POST">
+        <input type="text" name="plateNumber" value="{{ vehicle['plateNumber'] }}"><br>
+        <input type="text" name="owner" value="{{ vehicle['owner'] }}"><br>
+        <select name="brand">
+            <option value="">-- Select --</option>
+            <option value="Toyota" {{ 'selected' if vehicle['brand'] == 'Toyota' }}>Toyota</option>
+            <option value="Honda" {{ 'selected' if vehicle['brand'] == 'Honda' }}>Honda</option>
+            <option value="Mitsubishi" {{ 'selected' if vehicle['brand'] == 'Mitsubishi' }}>Mitsubishi</option>
+        </select><br>
+        <select name="type">
+            <option value="">-- Select --</option>
+            <option value="SUV" {{ 'selected' if vehicle['type'] == 'SUV' }}>SUV</option>
+            <option value="Sedan" {{ 'selected' if vehicle['type'] == 'Sedan' }}>Sedan</option>
+        </select><br>
+        <button type="submit">Update</button> 
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>
