@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>App</title></head>
+<body>
+    <h1>Expenses</h1>
+    <a href="/add">Add New</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        {% for expense in expenses %}
+        <tr>
+            <td>{{ expense["id"] }}</td>
+            <td>{{ expense["description"] }}</td>
+            <td>{{ expense["amount"] }}</td>
+            <td>{{ expense["category"] }}</td>
+            <td>{{ expense["date"] }}</td>
+            <td>
+                <a href="/edit/{{ expense['id'] }}">Edit</a>
+                <a href="/delete/{{ expense['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

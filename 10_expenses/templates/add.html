@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add</title></head>
+<body>
+    <h1>Add Expenses</h1>
+    <form method="POST">
+        <input type="text" name="description" placeholder="Description"><br>
+        <input type="number" name="amount" step="0.01" placeholder="Amount"><br>
+        <select name="category">
+            <option value="">-- Select --</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Others">Others</option>
+        </select><br>
+        <input type="date" name="date" placeholder="Date"><br>
+        <button type="submit">Save</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>
