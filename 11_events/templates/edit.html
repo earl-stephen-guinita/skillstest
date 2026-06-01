@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Event</h1>
+    <form method="POST">
+        <input type="text" name="eventName" value="{{ event['eventName'] }}"><br>
+        <input type="text" name="location" value="{{ event['location'] }}"><br>
+        <input type="date" name="date" value="{{ event['date'] }}"><br>
+        <select name="status">
+            <option value="">-- Select --</option>
+            <option value="Upcoming" {{ 'selected' if event['status'] == 'Upcoming' }}>Upcoming</option>
+            <option value="Ongoing" {{ 'selected' if event['status'] == 'Ongoing' }}>Ongoing</option>
+            <option value="Completed" {{ 'selected' if event['status'] == 'Completed' }}>Completed</option>
+            <option value="Cancelled" {{ 'selected' if event['status'] == 'Cancelled' }}>Cancelled</option>
+        </select><br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>
