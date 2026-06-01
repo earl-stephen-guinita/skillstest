@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Course</h1>
+    <form method="POST">
+        <label for="courseCode">Course Code</label><br>
+        <input type="text" name="courseCode" value="{{ course['courseCode'] }}" required><br><br>
+
+        <label for="courseName">Course Name</label><br>
+        <select name="courseName" required>
+            <option value="">-- Select --</option>
+            <option value="Python" {{ 'selected' if course['courseName'] == 'Python' }}>Python</option>
+            <option value="Java" {{ 'selected' if course['courseName'] == 'Java' }}>Java</option>
+            <option value="C" {{ 'selected' if course['courseName'] == 'C' }}>C</option>
+        </select><br><br>
+
+        <label for="units">Units</label><br>
+        <input type="number" name="units" value="{{ course['units'] }}" required><br><br>
+
+        <label for="department">Department</label><br>
+        <select name="department" required>
+            <option value="">-- Select --</option>
+            <option value="IT" {{ 'selected' if course['department'] == 'IT' }}>IT</option>
+            <option value="Engineering" {{ 'selected' if course['department'] == 'Engineering' }}>Engineering</option>
+            <option value="Customs" {{ 'selected' if course['department'] == 'Customs' }}>Customs</option>
+        </select><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>

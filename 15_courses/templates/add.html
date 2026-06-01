@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add</title></head>
+<body>
+    <h1>Add Course</h1>
+    <form method="POST">
+        <label for="courseCode">Course Code</label><br>
+        <input type="text" name="courseCode" placeholder="Course Code" required><br><br>
+
+        <label for="courseName">Course Name</label><br>
+        <select name="courseName" required>
+            <option value="">-- Select --</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="C">C</option>
+        </select><br><br>
+
+        <label for="units">Units</label><br>
+        <input type="number" name="units" placeholder="Units" required><br><br>
+
+        <label for="department">Department</label><br>
+        <select name="department" required>
+            <option value="">-- Select --</option>
+            <option value="IT">IT</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Customs">Customs</option>
+        </select><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>
