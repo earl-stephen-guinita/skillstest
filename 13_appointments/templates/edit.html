@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Appointment</h1>
+    <form method="POST">
+        <label for="patientName">Name of Patient</label><br>
+        <input type="text" name="patientName" value="{{ appointment['patientName'] }}"><br><br>
+
+        <label for="doctorName">Name of Doctor</label><br>
+        <input type="text" name="doctorName" value="{{ appointment['doctorName'] }}"><br><br>
+
+        <label for="date">Date</label><br>
+        <input type="date" name="date" value="{{ appointment['date'] }}"><br><br>
+
+        <label for="time">Time</label><br>
+        <input type="time" name="time" value="{{ appointment['time'] }}"><br><br>
+
+        <label for="status">Status</label><br>
+        <select name="status">
+            <option value="">-- Select --</option>
+            <option value="Scheduled" {{ 'selected' if appointment['status'] == 'Scheduled' }}>Scheduled</option>
+            <option value="Completed" {{ 'selected' if appointment['status'] == 'Completed' }}>Completed</option>
+            <option value="Cancelled" {{ 'selected' if appointment['status'] == 'Cancelled' }}>Cancelled</option>
+        </select><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>
