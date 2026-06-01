@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Hotel Room</h1>
+    <form method="POST">
+        <label for="roomNumber">Room Number</label><br>
+        <input type="text" name="roomNumber" value="{{ hotelRoom['roomNumber'] }}"><br><br>
+
+        <label for="roomType">Room Type</label><br>
+        <select name="roomType">
+            <option value="">-- Select --</option>
+            <option value="Single" {{ 'selected' if hotelRoom['roomType'] == 'Single' }}>Single</option>
+            <option value="Double" {{ 'selected' if hotelRoom['roomType'] == 'Double' }}>Double</option>
+            <option value="Suite" {{ 'selected' if hotelRoom['roomType'] == 'Suite' }}>Suite</option>
+            <option value="Deluxe" {{ 'selected' if hotelRoom['roomType'] == 'Deluxe' }}>Deluxe</option>
+        </select><br><br>
+
+        <label for="capacity">Capacity</label><br>
+        <input type="number" name="capacity" value="{{ hotelRoom['capacity'] }}"><br><br>
+
+        <label for="price">Price</label><br>
+        <input type="number" name="price" step="0.01" value="{{ hotelRoom['price'] }}"><br><br>
+
+        <label for="status">Status</label><br>
+        <select name="status">
+            <option value="">-- Select --</option>
+            <option value="Available" {{ 'selected' if hotelRoom['status'] == 'Available' }}>Available</option>
+            <option value="Occupied" {{ 'selected' if hotelRoom['status'] == 'Occupied' }}>Occupied</option>
+            <option value="Under Maintenance" {{ 'selected' if hotelRoom['status'] == 'Under Maintenance' }}>Under Maintenance</option>
+        </select><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>

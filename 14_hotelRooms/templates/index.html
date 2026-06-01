@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>App</title></head>
+<body>
+    <h1>Hotel Rooms</h1>
+    <a href="/add">Add New</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Room Number</th>
+            <th>Room Type</th>
+            <th>Capacity</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for hotelRoom in hotelRooms %}
+        <tr>
+            <td>{{ hotelRoom["id"] }}</td>
+            <td>{{ hotelRoom["roomNumber"] }}</td>
+            <td>{{ hotelRoom["roomType"] }}</td>
+            <td>{{ hotelRoom["capacity"] }}</td>
+            <td>{{ hotelRoom["price"] }}</td>
+            <td>{{ hotelRoom["status"] }}</td>
+            <td>
+                <a href="/edit/{{ hotelRoom['id'] }}">Edit</a>
+                <a href="/delete/{{ hotelRoom['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
