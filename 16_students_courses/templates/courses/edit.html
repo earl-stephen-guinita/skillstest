@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Course</h1>
+    <form method="POST">
+        <label for="courseCode">Course Code</label><br>
+        <input type="number" name="courseCode" value="{{ course['courseCode'] }}" required><br><br>
+
+        <label for="courseName">Course Name</label><br>
+        <select name="courseName" required>
+            <option value="">-- Select --</option>
+            <option value="INFOSEC" {{ 'selected' if course['courseName'] == 'INFOSEC'}}>INFOSEC</option>
+            <option value="IMDBSYS32" {{ 'selected' if course['courseName'] == 'IMDBSYS32'}}>IMDBSYS32</option>
+            <option value="SYSARCH" {{ 'selected' if course['courseName'] == 'SYSARCH'}}>SYSARCH</option>
+            <option value="INTPROG" {{ 'selected' if course['courseName'] == 'INTPROG'}}>INTPROG</option>
+            <option value="TECHNO" {{ 'selected' if course['courseName'] == 'TECHNO'}}>TECHNO</option>
+            <option value="FRETRNDS" {{ 'selected' if course['courseName'] == 'FRETRNDS'}}>FRETRNDS</option>
+            <option value="ELNET" {{ 'selected' if course['courseName'] == 'ELNET'}}>ELNET</option>
+            <option value="SYSADMN" {{ 'selected' if course['courseName'] == 'SYSADMN'}}>SYSADMN</option>
+        </select><br><br>
+
+        <label for="units">Units</label><br>
+        <input type="number" name="units" value="{{ course['units'] }}" required><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/courses">Back</a>
+</body>
+</html>

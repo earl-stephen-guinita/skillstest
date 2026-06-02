@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Student</h1>
+    <form method="POST">
+        <label for="firstName">First Name</label><br>
+        <input type="text" name="firstName" value="{{ student['firstName'] }}" required><br><br>
+
+        <label for="lastName">Last Name</label><br>
+        <input type="text" name="lastName" value="{{ student['lastName'] }}" required><br><br>
+
+        <label for="course">Course</label><br>
+        <select name="course" required>
+            <option value="">-- Select --</option>
+            <option value="INFOSEC" {{ 'selected' if student['course'] == 'INFOSEC'}}>INFOSEC</option>
+            <option value="IMDBSYS32" {{ 'selected' if student['course'] == 'IMDBSYS32'}}>IMDBSYS32</option>
+            <option value="SYSARCH" {{ 'selected' if student['course'] == 'SYSARCH'}}>SYSARCH</option>
+            <option value="INTPROG" {{ 'selected' if student['course'] == 'INTPROG'}}>INTPROG</option>
+            <option value="TECHNO" {{ 'selected' if student['course'] == 'TECHNO'}}>TECHNO</option>
+            <option value="FRETRNDS" {{ 'selected' if student['course'] == 'FRETRNDS'}}>FRETRNDS</option>
+            <option value="ELNET" {{ 'selected' if student['course'] == 'ELNET'}}>ELNET</option>
+            <option value="SYSADMN" {{ 'selected' if student['course'] == 'SYSADMN'}}>SYSADMN</option>
+        </select><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/students">Back</a>
+</body>
+</html>

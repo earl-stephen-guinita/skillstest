@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Courses</title></head>
+<body>
+    <h1>Courses</h1>
+    <a href="/courses/add">Add New</a>
+    <a href="/">Back to Menu</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Units</th>
+            <th>Actions</th>
+        </tr>
+        {% for course in courses %}
+        <tr>
+            <td>{{ course["id"] }}</td>
+            <td>{{ course["courseCode"] }}</td>
+            <td>{{ course["courseName"] }}</td>
+            <td>{{ course["units"] }}</td>
+            <td>
+                <a href="/courses/edit/{{ course['id'] }}">Edit</a>
+                <a href="/courses/delete/{{ course['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

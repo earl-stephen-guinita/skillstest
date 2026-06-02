@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add</title></head>
+<body>
+    <h1>Add Course</h1>
+    <form method="POST">
+        <label for="courseCode">Course Code</label><br>
+        <input type="number" name="courseCode" placeholder="Course Code" required><br><br>
+
+        <label for="courseName">Course Name</label><br>
+        <select name="courseName" required>
+            <option value="">-- Select --</option>
+            <option value="INFOSEC">INFOSEC</option>
+            <option value="IMDBSYS32">IMDBSYS32</option>
+            <option value="SYSARCH">SYSARCH</option>
+            <option value="INTPROG">INTPROG</option>
+            <option value="TECHNO">TECHNO</option>
+            <option value="FRETRNDS">FRETRNDS</option>
+            <option value="ELNET">ELNET</option>
+            <option value="SYSADMN">SYSADMN</option>
+        </select><br><br>
+
+        <label for="units">Units</label><br>
+        <input type="number" name="units" placeholder="Units" required><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+    <a href="/courses">Back</a>
+</body>
+</html>
