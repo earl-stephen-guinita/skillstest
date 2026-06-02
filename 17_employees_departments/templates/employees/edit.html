@@ -5,7 +5,7 @@
     <h1>Edit Employee</h1>
     <form method="POST">
         <label for="firstName">First Name</label><br>
-        <input type="text" name="firstName" value="{{ employee['firstName']}}" required><br><br>
+        <input type="text" name="firstName" value="{{ employee['firstName'] }}" required><br><br>
 
         <label for="lastName">Last Name</label><br>
         <input type="text" name="lastName" value="{{ employee['lastName'] }}" required><br><br>
@@ -19,8 +19,8 @@
         <label for="status">Status</label><br>
         <select name="status" required>
             <option value="">-- Select --</option>
-            <option value="Active" {{ 'selected' if employee['status' == 'Active'] }}>Active</option>
-            <option value="Inactive" {{ 'selected' if employee['status' == 'Inactive'] }}>Inactive</option>
+            <option value="Active" {{ 'selected' if employee['status'] == 'Active' }}>Active</option>
+            <option value="Inactive" {{ 'selected' if employee['status'] == 'Inactive' }}>Inactive</option>
         </select><br><br>
 
         <button type="submit">Update</button>
