@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Department</h1>
+    <form method="POST">
+        <label for="deptCode">Department Code</label><br>
+        <input type="text" name="deptCode" value="{{ department['deptCode'] }}" required><br><br>
+
+        <label for="deptName">Deparment Name</label><br>
+        <input type="text" name="deptName" value="{{ department['deptName'] }}" required><br><br>
+
+        <label for="Location">Location</label><br>
+        <input type="text" name="location" value="{{ department['location'] }}" required><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add</title></head>
+<body>
+    <h1>Add Employee</h1>
+    <form method="POST">
+        <label for="firstName">First Name</label><br>
+        <input type="text" name="firstName" placeholder="First Name" required><br><br>
+
+        <label for="lastName">Last Name</label><br>
+        <input type="text" name="lastName" placeholder="Last Name" required><br><br>
+
+        <label for="position">Position</label><br>
+        <input type="text" name="position" placeholder="Position" required><br><br>
+
+        <label for="salary">Salary</label><br>
+        <input type="number" name="salary" step="0.01" placeholder="Salary" required><br><br>
+
+        <label for="status">Status</label><br>
+        <select name="status" required>
+            <option value="">-- Select --</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+        </select><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>

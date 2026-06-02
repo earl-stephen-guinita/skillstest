@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Employee</h1>
+    <form method="POST">
+        <label for="firstName">First Name</label><br>
+        <input type="text" name="firstName" value="{{ employee['firstName']}}" required><br><br>
+
+        <label for="lastName">Last Name</label><br>
+        <input type="text" name="lastName" value="{{ employee['lastName'] }}" required><br><br>
+
+        <label for="position">Position</label><br>
+        <input type="text" name="position" value="{{ employee['position'] }}" required><br><br>
+
+        <label for="salary">Salary</label><br>
+        <input type="number" name="salary" step="0.01" value="{{ employee['salary'] }}" required><br><br>
+
+        <label for="status">Status</label><br>
+        <select name="status" required>
+            <option value="">-- Select --</option>
+            <option value="Active" {{ 'selected' if employee['status' == 'Active'] }}>Active</option>
+            <option value="Inactive" {{ 'selected' if employee['status' == 'Inactive'] }}>Inactive</option>
+        </select><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>
