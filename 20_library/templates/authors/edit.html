@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Author</h1>
+    <form method="POST">
+        <label for="firstName">First Name</label><br>
+        <input type="text" name="firstName" value="{{ author['firstName'] }}" required><br><br>
+
+        <label for="lastName">Last Name</label><br>
+        <input type="text" name="lastName" value="{{ author['lastName'] }}" required><br><br>
+
+        <label for="nationality">Nationality</label><br>
+        <input type="text" name="nationality" value="{{ author['nationality'] }}" required><br><br>
+
+        <label for="birthDate">Birth Date</label><br>
+        <input type="date" name="birthDate" value="{{ author['birthDate'] }}" required><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/authors">Back</a>
+</body>
+</html>

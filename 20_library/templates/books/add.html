@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add</title></head>
+<body>
+    <h1>Add Book</h1>
+    <form method="POST">
+        <label for="title">Title</label><br>
+        <input type="text" name="title" placeholder="Title" required><br><br>
+
+        <label for="genre">Genre</label><br>
+        <input type="text" name="genre" placeholder="Genre" required><br><br>
+
+        <label for="yearPublished">Year Published</label><br>
+        <input type="text" name="yearPublished" placeholder="Year Published" required><br><br>
+
+        <label for="status">Status</label><br>
+        <select name="status" required>
+            <option value="">-- Select --</option>
+            <option value="Available">Available</option>
+            <option value="Borrowed">Borrowed</option>
+            <option value="Damaged">Damaged</option>
+        </select><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+    <a href="/books">Back</a>
+</body>
+</html>

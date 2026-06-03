@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>Members</title></head>
+<body>
+    <h1>Members</h1>
+    <a href="/members/add">Add New</a>
+    <a href="/">Back to Main Menu</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Membership Date</th>
+            <th>Actions</th>
+        </tr>
+        {% for member in members %}
+        <tr>
+            <td>{{ member["id"] }}</td>
+            <td>{{ member["firstName"] }}</td>
+            <td>{{ member["lastName"] }}</td>
+            <td>{{ member["email"] }}</td>
+            <td>{{ member["membershipDate"] }}</td>
+            <td>
+                <a href="/members/edit/{{ member['id'] }}">Edit</a>
+                <a href="/members/delete/{{ member['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
