@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>Categories</title></head>
+<body>
+    <h1>Categories</h1>
+    <a href="/categories/add">Add New</a>
+    <a href="/">Back to Main Menu</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Category Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+        {% for category in categories %}
+        <tr>
+            <td>{{ category["id"] }}</td>
+            <td>{{ category["categoryName"] }}</td>
+            <td>{{ category["description"] }}</td>
+            <td>
+                <a href="/categories/edit/{{ category['id'] }}">Edit</a>
+                <a href="/categories/delete/{{ category['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
