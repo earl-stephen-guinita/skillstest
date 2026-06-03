@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add</title></head>
+<body>
+    <h1>Add Patient</h1>
+    <form method="POST">
+        <label for="firstName">First Name</label><br>
+        <input type="text" name="firstName" placeholder="First Name" required><br><br>
+
+        <label for="lastName">Last Name</label><br>
+        <input type="text" name="lastName" placeholder="Last Name" required><br><br>
+
+        <label for="birthDate">Birth Date</label><br>
+        <input type="date" name="birthDate" placeholder="Birth Date" required><br><br>
+        
+        <label for="contactNumber">Contact Number</label><br>
+        <input type="tel" name="contactNumber" placeholder="Contact Number" required><br><br>
+
+        <label for="gender">Gender</label><br>
+        <select name="gender" required>
+            <option value="">-- Select --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+    <a href="/patients">Back</a>
+</body>
+</html>

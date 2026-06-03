@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Patient</h1>
+    <form method="POST">
+        <label for="firstName">First Name</label><br>
+        <input type="text" name="firstName" value="{{ patient['firstName'] }}" required><br><br>
+
+        <label for="lastName">Last Name</label><br>
+        <input type="text" name="lastName" value="{{ patient['lastName'] }}" required><br><br>
+
+        <label for="birthDate">Birth Date</label><br>
+        <input type="date" name="birthDate" value="{{ patient['birthDate'] }}" required><br><br>
+        
+        <label for="contactNumber">Contact Number</label><br>
+        <input type="tel" name="contactNumber" value="{{ patient['contactNumber'] }}" required><br><br>
+
+        <label for="gender">Gender</label><br>
+        <select name="gender" required>
+            <option value="">-- Select --</option>
+            <option value="Male" {{ 'selected' if patient['gender'] == 'Male' }}>Male</option>
+            <option value="Female" {{ 'selected' if patient['gender'] == 'Female' }}>Female</option>
+        </select><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/patients">Back</a>
+</body>
+</html>
