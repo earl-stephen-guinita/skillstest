@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head><title>Patients</title></head>
+<head><title>Search</title></head>
 <body>
-    <h1>Patients</h1>
-    <a href="/patients/add">Add New</a>
-    <a href="/patients/search">Search</a>
-    <a href="/">Back to Main Menu</a>
+    <h1>Search Patients</h1>
+    <a href="/">Back to Menu</a><br><br>
+
+    <form method="GET">
+        <label for="gender">Filter by Gender</label><br>
+        <select name="gender">
+            <option value="">-- All --</option>
+            <option value="Male" {{ 'selected' if gender == 'Male' }}>Male</option>
+            <option value="Female" {{ 'selected' if gender == 'Female' }}>Female</option>
+        </select><br><br>  
+        <button type="submit">Search</button>
+    </form>
+
     <table border="1">
         <tr>
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Birth Date</th>
-            <th>Contact Number</th>
             <th>Gender</th>
-            <th>Actions</th>
         </tr>
         {% for patient in patients %}
         <tr>
@@ -22,12 +29,7 @@
             <td>{{ patient["firstName"] }}</td>
             <td>{{ patient["lastName"] }}</td>
             <td>{{ patient["birthDate"] }}</td>
-            <td>{{ patient["contactNumber"] }}</td>
             <td>{{ patient["gender"] }}</td>
-            <td>
-                <a href="/patients/edit/{{ patient['id'] }}">Edit</a>
-                <a href="/patients/delete/{{ patient['id'] }}">Delete</a>
-            </td>
         </tr>
         {% endfor %}
     </table>

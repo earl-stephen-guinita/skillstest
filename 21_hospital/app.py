@@ -215,6 +215,20 @@ def patients_delete(id):
     conn.close()
     return redirect(url_for("patients"))
 
+# SEARCH
+
+
+@app.route("/patients/search")
+def patients_search():
+    gender = request.args.get("gender", "")
+    conn = get_db()
+    patients = conn.execute(
+        "SELECT * FROM patients WHERE gender = ?",
+        (gender,)
+    ).fetchall()
+    conn.close()
+    return render_template("patients/search.html", patients=patients, gender=gender)
+
 
 if __name__ == "__main__":
     init_db()
