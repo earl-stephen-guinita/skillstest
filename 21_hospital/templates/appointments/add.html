@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add</title></head>
+<body>
+    <h1>Add Appointment</h1>
+    <form method="POST">
+        <label for="patientName">Name of Patient</label><br>
+        <input type="text" name="patientName" placeholder="Name of Patient" required><br><br>
+
+        <label for="doctorName">Name of Doctor</label><br>
+        <input type="text" name="doctorName" placeholder="Name of Doctor" required><br><br>
+
+        <label for="date">Date</label><br>
+        <input type="date" name="date" placeholder="Date" required><br><br>
+
+        <label for="time">Time</label><br>
+        <input type="time" name="time" placeholder="Time" required><br><br>
+
+        <label for="status">Status</label><br>
+        <select name="status" required>
+            <option value="">-- Select --</option>
+            <option value="Scheduled">Scheduled</option>
+            <option value="Completed">Completed</option>
+            <option value="Cancelled">Cancelled</option>
+        </select><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+    <a href="/appointments">Back</a>
+</body>
+</html>

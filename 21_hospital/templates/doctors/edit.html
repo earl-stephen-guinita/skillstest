@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Doctor</h1>
+    <form method="POST">
+        <label for="firstName">First Name</label><br>
+        <input type="text" name="firstName" value="{{ doctor['firstName'] }}" required><br><br>
+
+        <label for="lastName">Last Name</label><br>
+        <input type="text" name="lastName" value="{{ doctor['lastName'] }}" required><br><br>
+
+        <label for="specialization">Specialization</label><br>
+        <input type="text" name="specialization" value="{{ doctor['specialization'] }}" required><br><br>
+
+        <label for="contactNumber">Contact Number</label><br>
+        <input type="tel" name="contactNumber" value="{{ doctor['contactNumber'] }}" required><br><br>
+
+        <label for="status">Status</label><br>
+        <select name="status" required>
+            <option value="">-- Select --</option>
+            <option value="Available" {{ 'selected' if doctor['status'] == 'Available' }}>Available</option>
+            <option value="Unavailable" {{ 'selected' if doctor['status'] == 'Unavailable' }}>Unavailable</option>
+        </select><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/doctors">Back</a>
+</body>
+</html>
