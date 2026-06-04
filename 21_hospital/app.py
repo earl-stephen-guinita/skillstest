@@ -137,6 +137,20 @@ def doctors_delete(id):
     conn.close()
     return redirect(url_for("doctors"))
 
+# SEARCH
+
+
+@app.route("/doctors/search")
+def doctors_search():
+    keyword = request.args.get("keyword", "")
+    conn = get_db()
+    doctors = conn.execute(
+        "SELECT * FROM doctors WHERE specialization LIKE ?",
+        ('%' + keyword + '%',)
+    ).fetchall()
+    conn.close()
+    return render_template("doctors/search.html", doctors=doctors, keyword=keyword)
+
 # ===== Patients =====
 
 # READ
