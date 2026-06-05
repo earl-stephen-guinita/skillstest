@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search</title></head>
+<body>
+    <h1>Search Patients</h1>
+    <a href="/">Back to Main Menu</a><br><br>
+
+    <form method="GET">
+        <label for="keyword">Search by Last Name</label><br>
+        <input type="text" name="keyword" value="{{ keyword }}" placeholder="Enter Last Name"><br><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Birth Date</th>
+            <th>Contact Number</th>
+        </tr>
+        {% for patient in patients %}
+        <tr>
+            <td>{{ patient["id"] }}</td>
+            <td>{{ patient["firstName"] }}</td>
+            <td>{{ patient["lastName"] }}</td>
+            <td>{{ patient["birthDate"] }}</td>
+            <td>{{ patient["contactNumber"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
