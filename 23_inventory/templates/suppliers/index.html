@@ -17,11 +17,11 @@
         </tr>
         {% for supplier in suppliers %}
         <tr>
-            <td>{{ product["id"] }}</td>
-            <td>{{ product["supplierName"] }}</td>
-            <td>{{ product["contactNumber"] }}</td>
-            <td>{{ product["address"] }}</td>
-            <td>{{ product["status"] }}</td>
+            <td>{{ supplier["id"] }}</td>
+            <td>{{ supplier["supplierName"] }}</td>
+            <td>{{ supplier["contactNumber"] }}</td>
+            <td>{{ supplier["address"] }}</td>
+            <td>{{ supplier["status"] }}</td>
             <td>
                 <a href="/suppliers/edit/{{ supplier['id'] }}">Edit</a>
                 <a href="/suppliers/delete/{{ supplier['id'] }}">Delete</a>
