@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Subjects</title></head>
+<body>
+    <h1>Subjects</h1>
+    <a href="/subjects/add">Add New</a>
+    <a href="/subjects/search">Search</a>
+    <a href="/">Back to Main Menu</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Subject Code</th>
+            <th>Subject Name</th>
+            <th>Units</th>
+            <th>Department</th>
+            <th>Actions</th>
+        </tr>
+        {% for subject in subjects %}
+        <tr>
+            <td>{{ subject["id"] }}</td>
+            <td>{{ subject["subjectCode"] }}</td>
+            <td>{{ subject["subjectName"] }}</td>
+            <td>{{ subject["units"] }}</td>
+            <td>{{ subject["department"] }}</td>
+            <td>
+                <a href="/subjects/edit/{{ subject['id'] }}">Edit</a>
+                <a href="/subjects/delete/{{ subject['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

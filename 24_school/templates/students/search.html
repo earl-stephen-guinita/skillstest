@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search</title></head>
+<body>
+    <h1>Search Students</h1>
+    <a href="/">Back to Main Menu</a><br><br>
+
+    <form method="GET">
+        <label for="course">Filter by Course</label><br>
+        <select name="course">
+            <option value="">-- All --</option>
+            <option value="BSIT" {{ 'selected' if course == 'BSIT' }}>BSIT</option>
+            <option value="BSCS" {{ 'selected' if course == 'BSCS' }}>BSCS</option>
+            <option value="BSBA" {{ 'selected' if course == 'BSBA' }}>BSBA</option>
+            <option value="BSN" {{ 'selected' if course == 'BSN' }}>BSN</option>
+        </select><br><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Course</th>
+            <th>Year Level</th>
+            <th>Status</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student["id"] }}</td>
+            <td>{{ student["firstName"] }}</td>
+            <td>{{ student["lastName"] }}</td>
+            <td>{{ student["course"] }}</td>
+            <td>{{ student["yearLevel"] }}</td>
+            <td>{{ student["status"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Teacher</h1>
+    <form method="POST">
+        <label for="firstName">First Name</label><br>
+        <input type="text" name="firstName" value="{{ teacher['firstName'] }}" required><br><br>
+
+        <label for="lastName">Last Name</label><br>
+        <input type="text" name="lastName" value="{{ teacher['lastName'] }}" required><br><br>
+
+        <label for="subject">Subject</label><br>
+        <input type="text" name="subject" value="{{ teacher['subject'] }}" required><br><br>
+
+        <label for="contactNumer">Contact Number</label><br>
+        <input type="tel" name="contactNumber" value="{{ teacher['contactNumber'] }}" required><br><br>
+
+        <label for="status">Status</label><br>
+        <select name="status" required>
+            <option value="">-- Select --</option>
+            <option value="Active" {{ 'selected' if teacher['status'] == 'Active' }}>Active</option>
+            <option value="Inactive" {{ 'selected' if teacher['status'] == 'Inactive' }}>Inactive</option>
+        </select><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/teachers">Back</a>
+</body>
+</html>

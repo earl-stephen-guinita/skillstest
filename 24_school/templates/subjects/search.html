@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search</title></head>
+<body>
+    <h1>Search Subjects</h1>
+    <a href="/">Back to Main Menu</a><br><br>
+
+    <form method="GET">
+        <label for="department">Filter by Department</label><br>
+        <select name="department">
+            <option value="">-- All --</option>
+            <option value="CCS" {{ 'selected' if department == 'CCS' }}>CCS</option>
+            <option value="CBA" {{ 'selected' if department == 'CBA' }}>CBA</option>
+            <option value="CON" {{ 'selected' if department == 'CON' }}>CON</option>
+            <option value="COE" {{ 'selected' if deapartment == 'COE' }}>COE</option>
+        </select><br><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Subject Code</th>
+            <th>Subject Name</th>
+            <th>Units</th>
+            <th>Department</th>
+        </tr>
+        {% for subject in subjects %}
+        <tr>
+            <td>{{ subject["id"] }}</td>
+            <td>{{ subject["subjectCode"] }}</td>
+            <td>{{ subject["subjectName"] }}</td>
+            <td>{{ subject["units"] }}</td>
+            <td>{{ subject["department"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

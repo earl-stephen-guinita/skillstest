@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add</title></head>
+<body>
+    <h1>Add Subject</h1>
+    <form method="POST">
+        <label for="subjectCode">Subject Code</label><br>
+        <input type="text" name="subjectCode" placeholder="Subject Code" required><br><br>
+
+        <label for="subjectName">Subject Name</label><br>
+        <input type="text" name="subjectName" placeholder="Subject Name" required><br><br>
+
+        <label for="units">Units</label><br>
+        <input type="number" name="units" placeholder="Units" required><br><br>
+
+        <label for="department">Department</label><br>
+        <select name="department" required>
+            <option value="">-- Select --</option>
+            <option value="CCS">CCS</option>
+            <option value="CBA">CBA</option>
+            <option value="CON">CON</option>
+            <option value="COE">COE</option>
+        </select><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+    <a href="/subjects">Back</a>
+</body>
+</html>

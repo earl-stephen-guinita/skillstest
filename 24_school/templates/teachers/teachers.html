@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>Teachers</title></head>
+<body>
+    <h1>Teachers</h1>
+    <a href="/teachers/add">Add New</a>
+    <a href="/teachers/search">Search</a>
+    <a href="/">Back to Main Menu</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Subject</th>
+            <th>Contact Number</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for teacher in teachers %}
+        <tr>
+            <td>{{ teacher["id"] }}</td>
+            <td>{{ teacher["firstName"] }}</td>
+            <td>{{ teacher["lastName"] }}</td>
+            <td>{{ teacher["subject"] }}</td>
+            <td>{{ teacher["contactNumber"] }}</td>
+            <td>{{ teacher["status"] }}</td>
+            <td>
+                <a href="/teachers/edit/{{ teacher['id'] }}">Edit</a>
+                <a href="/teachers/delete/{{ teacher['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

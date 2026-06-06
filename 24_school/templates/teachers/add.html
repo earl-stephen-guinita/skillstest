@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add</title></head>
+<body>
+    <h1>Add Teacher</h1>
+    <form method="POST">
+        <label for="firstName">First Name</label><br>
+        <input type="text" name="firstName" placeholder="First Name" required><br><br>
+
+        <label for="lastName">Last Name</label><br>
+        <input type="text" name="lastName" placeholder="Last Name" required><br><br>
+
+        <label for="subject">Subject</label><br>
+        <input type="text" name="subject" placeholder="Subject" required><br><br>
+
+        <label for="contactNumer">Contact Number</label><br>
+        <input type="tel" name="contactNumber" placeholder="Contact Number" required><br><br>
+
+        <label for="status">Status</label><br>
+        <select name="status" required>
+            <option value="">-- Select --</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+        </select><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+    <a href="/teachers">Back</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Subject</h1>
+    <form method="POST">
+        <label for="subjectCode">Subject Code</label><br>
+        <input type="text" name="subjectCode" value="{{ subject['subjectCode'] }}" required><br><br>
+
+        <label for="subjectName">Subject Name</label><br>
+        <input type="text" name="subjectName" value="{{ subject['subjectName'] }}" required><br><br>
+
+        <label for="units">Units</label><br>
+        <input type="number" name="units" value="{{ subject['units'] }}" required><br><br>
+
+        <label for="department">Department</label><br>
+        <select name="department" required>
+            <option value="">-- Select --</option>
+            <option value="CCS" {{ 'selected' if subject['department'] == 'CCS' }}>CCS</option>
+            <option value="CBA" {{ 'selected' if subject['department'] == 'CBA' }}>CBA</option>
+            <option value="CON" {{ 'selected' if subject['department'] == 'CON' }}>CON</option>
+            <option value="COE" {{ 'selected' if subject['department'] == 'COE' }}>COE</option>
+        </select><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/subjects">Back</a>
+</body>
+</html>
