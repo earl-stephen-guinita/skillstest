@@ -162,7 +162,7 @@ def teachers_search():
     teachers = conn.execute(
         "SELECT * FROM teachers WHERE subject LIKE ?",
         ('%' + keyword + '%',)
-    ).fetchall
+    ).fetchall()
     conn.close()
     return render_template("teachers/search.html", teachers=teachers, keyword=keyword)
 
@@ -231,7 +231,7 @@ def subjects_delete(id):
 # SEARCH
 
 
-@app.route("/subjects")
+@app.route("/subjects/search")
 def subjects_search():
     department = request.args.get("department", "")
     conn = get_db()
