@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Supplier</h1>
+    <form method="POST">
+        <label for="supplierName">Name of Supplier</label><br>
+        <input type="text" name="supplierName" value="{{ supplier['supplierName'] }}" required><br><br>
+
+        <label for="contactNumber">Contact Number</label><br>
+        <input type="tel" name="contactNumber" value="{{ supplier['contactNumber'] }}" required><br><br>
+
+        <label for="address">Address</label><br>
+        <input type="text" name="address" value="{{ supplier['address'] }}" required><br><br>
+
+        <label for="status">Status</label><br>
+        <select name="status" required>
+            <option value="">-- Select --</option>
+            <option value="Active" {{ 'selected' if supplier['status'] == 'Active'}}>Active</option>
+            <option value="Inactive" {{ 'selected' if supplier['status'] == 'Inactive'}}>Inactive</option>
+        </select><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/suppliers">Back</a>
+</body>
+</html>

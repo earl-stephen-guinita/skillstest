@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search</title></head>
+<body>
+    <h1>Search Suppliers</h1>
+    <a href="/">Back to Main Menu</a><br><br>
+
+    <form method="GET">
+        <label for="status">Filter by Status</label>
+        <select name="status">
+            <option value="">-- All --</option>
+            <option value="Active" {{ 'selected' if status == 'Active' }}>Active</option>
+            <option value="Inactive" {{ 'selected' if status == 'Inactive' }}>Inactive</option>
+        </select><br><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name of Supplier</th>
+            <th>Contact Number</th>
+            <th>Address</th>
+            <th>Status</th>
+        </tr>
+        {% for supplier in suppliers %}
+        <tr>
+            <td>{{ supplier["id"] }}</td>
+            <td>{{ supplier["supplierName"] }}</td>
+            <td>{{ supplier["contactNumber"] }}</td>
+            <td>{{ supplier["address"] }}</td>
+            <td>{{ supplier["status"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

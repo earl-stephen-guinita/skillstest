@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Suppliers</title></head>
+<body>
+    <h1>Suppliers</h1>
+    <a href="/suppliers/add">Add new</a>
+    <a href="/suppliers/search">Search</a>
+    <a href="/">Back to Main Menu</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name of Supplier</th>
+            <th>Contact Number</th>
+            <th>Address</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for supplier in suppliers %}
+        <tr>
+            <td>{{ product["id"] }}</td>
+            <td>{{ product["supplierName"] }}</td>
+            <td>{{ product["contactNumber"] }}</td>
+            <td>{{ product["address"] }}</td>
+            <td>{{ product["status"] }}</td>
+            <td>
+                <a href="/suppliers/edit/{{ supplier['id'] }}">Edit</a>
+                <a href="/suppliers/delete/{{ supplier['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

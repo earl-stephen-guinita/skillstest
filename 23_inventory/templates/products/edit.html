@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Product</h1>
+    <form method="POST">
+        <label for="productName">Name of Product</label><br>
+        <input type="text" name="productName" value="{{ product['productName'] }}" required><br><br>
+
+        <label for="price">Price</label><br>
+        <input type="number" name="price" step="0.01" value="{{ product['price'] }}" required><br><br>
+
+        <label for="stock">Stock</label><br>
+        <input type="number" name="stock" value="{{ product['stock'] }}" required><br><br>
+
+        <label for="category">Category</label><br>
+        <select name="category" required>
+            <option value="">-- Select --</option>
+            <option value="Electronics" {{ 'selected' if product['category'] == 'Electronics' }}>Electronics</option>
+            <option value="Clothing" {{ 'selected' if product['category'] == 'Clothing' }}>Clothing</option>
+            <option value="Food" {{ 'selected' if product['category'] == 'Food' }}>Food</option>
+            <option value="Others" {{ 'selected' if product['category'] == 'Others' }}>Others</option>
+        </select><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/products">Back</a>
+</body>
+</html>

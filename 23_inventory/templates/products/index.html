@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Products</title></head>
+<body>
+    <h1>Products</h1>
+    <a href="/products/add">Add new</a>
+    <a href="/products/search">Search</a>
+    <a href="/">Back to Main Menu</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product["id"] }}</td>
+            <td>{{ product["productName"] }}</td>
+            <td>{{ product["price"] }}</td>
+            <td>{{ product["stock"] }}</td>
+            <td>{{ product["category"] }}</td>
+            <td>
+                <a href="/products/edit/{{ product['id'] }}">Edit</a>
+                <a href="/products/delete/{{ product['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
