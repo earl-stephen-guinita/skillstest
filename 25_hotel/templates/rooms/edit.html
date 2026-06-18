@@ -12,8 +12,8 @@
             <option value="">-- Select --</option>
             <option value="Single" {{ 'selected' if room['roomType'] == 'Single' }}>Single</option>
             <option value="Double" {{ 'selected' if room['roomType'] == 'Double' }}>Double</option>
-            <option value="Suite" {{ 'selected' if room['roomType'] == 'Single' }}>Suite</option>
-            <option value="Deluxe" {{ 'selected' if room['roomType'] == 'Single' }}>Deluxe</option>
+            <option value="Suite" {{ 'selected' if room['roomType'] == 'Suite' }}>Suite</option>
+            <option value="Deluxe" {{ 'selected' if room['roomType'] == 'Deluxe' }}>Deluxe</option>
         </select><br><br>
 
         <label for="price">Price</label><br>
