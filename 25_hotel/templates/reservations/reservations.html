@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>Reservations</title></head>
+<body>
+    <h1>Reservations</h1>
+    <a href="/reservations/add">Add New</a>
+    <a href="/reservations/search">Search</a>
+    <a href="/">Back to Main Menu</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Guest Name</th>
+            <th>Room Number</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for reservation in reservations %}
+        <tr>
+            <td>{{ reservation["id"] }}</td>
+            <td>{{ reservation["guestName"] }}</td>
+            <td>{{ reservation["roomNumber"] }}</td>
+            <td>{{ reservation["checkIn"] }}</td>
+            <td>{{ reservation["checkOut"] }}</td>
+            <td>{{ reservation["status"] }}</td>
+            <td>
+                <a href="/reservations/edit/{{ reservation['id'] }}">Edit</a>
+                <a href="/reservations/delete/{{ reservation['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search</title></head>
+<body>
+    <h1>Search Reservations</h1>
+    <a href="/">Back to Main Menu</a><br><br>
+
+    <form method="GET">
+        <label for="status">Filter by Status</label><br>
+        <select name="status">
+            <option value="">-- All --</option>
+            <option value="Pending" {{ 'selected' if status == 'Pending' }}>Pending</option>
+            <option value="Confirmed" {{ 'selected' if status == 'Confirmed' }}>Confirmed</option>
+            <option value="Cancelled" {{ 'selected' if status == 'Cancelled' }}>Cancelled</option>
+        </select><br><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Guest Name</th>
+            <th>Room Number</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Status</th>
+        </tr>
+        {% for resevation in reservations %}
+        <tr>
+            <td>{{ reservation['id'] }}</td>
+            <td>{{ reservation['guestName'] }}</td>
+            <td>{{ reservation['roomNumber'] }}</td>
+            <td>{{ reservation['checkIn'] }}</td>
+            <td>{{ reservation['checkOut'] }}</td>
+            <td>{{ reservation['status'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

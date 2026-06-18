@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search</title></head>
+<body>
+    <h1>Search Guests</h1>
+    <a href="/">Back to Main Menu</a><br><br>
+    
+    <form method="GET">
+        <label for="keyword">Search by Last Name</label><br>
+        <input type="text" name="keyword" value="{{ keyword }}" placeholder="Enter Last Name"><br><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Contact Number</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Status</th>
+        </tr>
+        {% for guest in guests %}
+        <tr>
+            <td>{{ guest['id'] }}</td>
+            <td>{{ guest['firstName'] }}</td>
+            <td>{{ guest['lastName'] }}</td>
+            <td>{{ guest['contactNumber'] }}</td>
+            <td>{{ guest['checkIn'] }}</td>
+            <td>{{ guest['checkOut'] }}</td>
+            <td>{{ guest['status'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

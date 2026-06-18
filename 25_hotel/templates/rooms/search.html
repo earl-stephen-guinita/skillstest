@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search</title></head>
+<body>
+    <h1>Search Rooms</h1>
+    <a href="/">Back to Main Menu</a><br><br>
+
+    <form method="GET">
+        <label for="status">Filter by Status</label><br>
+        <select name="status">
+            <option value="">-- All --</option>
+            <option value="Available" {{ 'selected' if status == 'Avaialble' }}>Available</option>
+            <option value="Occupied" {{ 'selected' if status == 'Occupied' }}>Occupied</option>
+            <option value="Under Maintenance" {{ 'selected' if status == 'Under Maintenance' }}>Under Maintenance</option>
+        </select><br><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Room Number</th>
+            <th>Room Type</th>
+            <th>Price</th>
+            <th>Status</th>
+        </tr>
+        {% for room in rooms %}
+        <tr>
+            <td>{{ room["id"] }}</td>
+            <td>{{ room["roomNumber"] }}</td>
+            <td>{{ room["roomType"] }}</td>
+            <td>{{ room["price"] }}</td>
+            <td>{{ room["status"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
