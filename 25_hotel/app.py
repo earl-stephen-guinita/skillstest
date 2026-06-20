@@ -79,7 +79,7 @@ def rooms_search():
     status = request.args.get("status", "")
     conn = get_db()
     rooms = conn.execute(
-        "SELECT * FROM rooms WHERE STATUS = ?",
+        "SELECT * FROM rooms WHERE status = ?",
         (status,)
     ).fetchall()
     conn.close()

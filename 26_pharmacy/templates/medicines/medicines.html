@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>Medicines</title></head>
+<body>
+    <h1>Medicines</h1>
+    <a href="/medicines/add">Add New</a>
+    <a href="/medicines/search">Search</a>
+    <a href="/">Back to Main Menu</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Medicine Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for medicine in medicines %}
+        <tr>
+            <td>{{ medicine["id"] }}</td>
+            <td>{{ medicine["medicineName"] }}</td>
+            <td>{{ medicine["category"] }}</td>
+            <td>{{ medicine["price"] }}</td>
+            <td>{{ medicine["stock"] }}</td>
+            <td>{{ medicine["status"] }}</td>
+            <td>
+                <a href="/medicines/edit/{{ medicine['id'] }}">Edit</a>
+                <a href="/medicines/delete/{{ medicine['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

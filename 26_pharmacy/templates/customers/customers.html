@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Customers</title></head>
+<body>
+    <h1>Customers</h1>
+    <a href="/customers/add">Add New</a>
+    <a href="/customers/search">Search</a>
+    <a href="/">Back to Main Menu</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Contact Number</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+        {% for customer in customers %}
+        <tr>
+            <td>{{ customer["id"] }}</td>
+            <td>{{ customer["firstName"] }}</td>
+            <td>{{ customer["lastName"] }}</td>
+            <td>{{ customer["contactNumber"] }}</td>
+            <td>{{ customer["address"] }}</td>
+            <td>
+                <a href="/customers/edit/{{ customer['id'] }}">Edit</a>
+                <a href="/customers/delete/{{ customer['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

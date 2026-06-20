@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Sales</h1>
+    <form method="POST">
+        <label for="customerName">Customer Name</label><br>
+        <input type="text" name="customerName" value="{{ sale['customerName'] }}" required><br><br>
+
+        <label for="medicineName">Medicine Name</label><br>
+        <input type="text" name="medicineName" value="{{ sale['medicineName'] }}" required><br><br>
+
+        <label for="quantity">Quantity</label><br>
+        <input type="number" name="quantity" value="{{ sale['quantity'] }}" required><br><br>
+
+        <label for="totalPrice">Total Price</label><br>
+        <input type="number" name="totalPrice" step="0.01" value="{{ sale['totalPrice'] }}" required><br><br>
+
+        <label for="saleDate">Sale Date</label><br>
+        <input type="date" name="saleDate" value="{{ sale['saleDate'] }}" required><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/sales">Back</a>
+</body>
+</html>

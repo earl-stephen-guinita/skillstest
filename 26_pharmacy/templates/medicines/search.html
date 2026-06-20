@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search</title></head>
+<body>
+    <h1>Search Medicines</h1>
+    <a href="/">Back to Main Menu</a><br><br>
+
+    <form method="GET">
+        <label for="category">Filter by Category</label><br>
+        <select name="category">
+            <option value="">-- All --</option>
+            <option value="Antibiotic" {{ 'selected' if category == 'Antibiotic' }}>Antibiotic</option>
+            <option value="Painkiller" {{ 'selected' if category == 'Painkiller' }}>Painkiller</option>
+            <option value="Vitamin" {{ 'selected' if category == 'Vitamin' }}>Vitamin</option>
+            <option value="Others" {{ 'selected' if category == 'Others' }}>Others</option>
+        </select><br><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Medicine Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Status</th>
+        </tr>
+        {% for medicine in medicines %}
+        <tr>
+            <td>{{ medicine["id"] }}</td>
+            <td>{{ medicine["medicineName"] }}</td>
+            <td>{{ medicine["category"] }}</td>
+            <td>{{ medicine["price"] }}</td>
+            <td>{{ medicine["stock"] }}</td>
+            <td>{{ medicine["status"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

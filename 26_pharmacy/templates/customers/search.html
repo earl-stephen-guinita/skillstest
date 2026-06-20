@@ -2,9 +2,9 @@
 <html>
 <head><title>Search</title></head>
 <body>
-    <h1>Search Guests</h1>
+    <h1>Search Customers</h1>
     <a href="/">Back to Main Menu</a><br><br>
-    
+
     <form method="GET">
         <label for="keyword">Search by Last Name</label><br>
         <input type="text" name="keyword" value="{{ keyword }}" placeholder="Enter Last Name"><br><br>
@@ -17,19 +17,15 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Contact Number</th>
-            <th>Check In</th>
-            <th>Check Out</th>
-            <th>Status</th>
+            <th>Address</th>
         </tr>
-        {% for guest in guests %}
+        {% for customer in customers %}
         <tr>
-            <td>{{ guest["id"] }}</td>
-            <td>{{ guest["firstName"] }}</td>
-            <td>{{ guest["lastName"] }}</td>
-            <td>{{ guest["contactNumber"] }}</td>
-            <td>{{ guest["checkIn"] }}</td>
-            <td>{{ guest["checkOut"] }}</td>
-            <td>{{ guest["status"] }}</td>
+            <td>{{ customer["id"] }}</td>
+            <td>{{ customer["firstName"] }}</td>
+            <td>{{ customer["lastName"] }}</td>
+            <td>{{ customer["contactNumber"] }}</td>
+            <td>{{ customer["address"] }}</td>
         </tr>
         {% endfor %}
     </table>
