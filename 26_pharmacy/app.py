@@ -145,7 +145,7 @@ def customers_edit(id):
 @app.route("/customers/delete/<int:id>")
 def customers_delete(id):
     conn = get_db()
-    conn.execute("DELETE * FROM customers WHERE id=?", (id,))
+    conn.execute("DELETE FROM customers WHERE id=?", (id,))
     conn.commit()
     conn.close()
     return redirect(url_for("customers"))
@@ -242,6 +242,6 @@ def sales_search():
     return render_template("sales/search.html", sales=sales, keyword=keyword)
 
 
-if __name__ == "__main__)":
+if __name__ == "__main__":
     init_db()
     app.run(debug=True)
