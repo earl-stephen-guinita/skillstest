@@ -161,7 +161,7 @@ def orders_search():
         ('%' + keyword + '%',)
     ).fetchall()
     conn.close()
-    return render_template("order/search.html", orders=orders, keyword=keyword)
+    return render_template("orders/search.html", orders=orders, keyword=keyword)
 
 
 if __name__ == "__main__":
