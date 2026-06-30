@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search</title></head>
+<body>
+    <h1>Search Orders</h1>
+    <a href="/">Back to Main Menu</a><br><br>
+
+    <form method="GET">
+        <label for="keyword">Search by Customer Name</label><br>
+        <input type="text" name="keyword" value="{{ keyword }}" placeholder="Enter Customer Name"><br><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Customer Name</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Order Date</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order['id'] }}</td>
+            <td>{{ order['customerName'] }}</td>
+            <td>{{ order['itemName'] }}</td>
+            <td>{{ order['quantity'] }}</td>
+            <td>{{ order['totalPrice'] }}</td>
+            <td>{{ order['orderDate'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

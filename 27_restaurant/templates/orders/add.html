@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add</title></head>
+<body>
+    <h1>Add Order</h1>
+    <form method="POST">
+        <label for="customerName">Customer Name</label><br>
+        <input type="text" name="customerName" placeholder="Customer Name" required><br><br>
+
+        <label for="itemName">Item Name</label><br>
+        <input type="text" name="itemName" placeholder="Item Name" required><br><br>
+
+        <label for="quantity">Quantity</label><br>
+        <input type="number" name="quantity" placeholder="Quantity" required><br><br>
+
+        <label for="totalPrice">Total Price</label><br>
+        <input type="number" name="totalPrice" step="0.01" placeholder="Total Price" required><br><br>
+
+        <label for="orderDate">Order Date</label><br>
+        <input type="date" name="orderDate" placeholder="Order Date" required><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+    <a href="/orders">Back</a>
+</body>
+</html>

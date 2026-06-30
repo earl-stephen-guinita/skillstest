@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add</title></head>
+<body>
+    <h1>Add Menu Item</h1>
+    <form method="POST">
+        <label for="itemName">Item Name</label><br>
+        <input type="text" name="itemName" placeholder="Item Name" required><br><br>
+
+        <label for="category">Category</label><br>
+        <select name="category" required>
+            <option value="">-- Select --</option>
+            <option value="Appetizer">Appetizer</option>
+            <option value="Main Course">Main Course</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Beverage">Beverage</option>
+        </select><br><br>
+
+        <label for="price">Price</label><br>
+        <input type="number" name="price" step="0.01" placeholder="Price" required><br><br>
+
+        <label for="status">Status</label><br>
+        <select name="status" required>
+            <option value="">-- Select --</option>
+            <option value="Available">Available</option>
+            <option value="Unavailable">Unavailable</option>
+        </select><br><br>
+
+        <button type="submit">Save</button>
+    </form>
+    <a href="/menu_items">Back</a>
+</body>
+</html>

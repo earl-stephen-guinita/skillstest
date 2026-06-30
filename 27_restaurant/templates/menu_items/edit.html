@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit</title></head>
+<body>
+    <h1>Edit Menu Item</h1>
+    <form method="POST">
+        <label for="itemName">Item Name</label><br>
+        <input type="text" name="itemName" value="{{ menu_item['itemName'] }}" required><br><br>
+
+        <label for="category">Category</label><br>
+        <select name="category" required>
+            <option value="">-- Select --</option>
+            <option value="Appetizer" {{ 'selected' if menu_item['category'] == 'Appetizer' }}>Appetizer</option>
+            <option value="Main Course" {{ 'selected' if menu_item['category'] == 'Main Course' }}>Main Course</option>
+            <option value="Dessert" {{ 'selected' if menu_item['category'] == 'Dessert' }}>Dessert</option>
+            <option value="Beverage" {{ 'selected' if menu_item['category'] == 'Beverage' }}>Beverage</option>
+        </select><br><br>
+
+        <label for="price">Price</label><br>
+        <input type="number" name="price" step="0.01" value="{{ menu_item['price'] }}" required><br><br>
+
+        <label for="status">Status</label><br>
+        <select name="status" required>
+            <option value="">-- Select --</option>
+            <option value="Available" {{ 'selected' if menu_item['status'] == 'Available' }}>Available</option>
+            <option value="Unavailable" {{ 'selected' if menu_item['status'] == 'Unavailable' }}>Unavailable</option>
+        </select><br><br>
+
+        <button type="submit">Update</button>
+    </form>
+    <a href="/menu_items">Back</a>
+</body>
+</html>

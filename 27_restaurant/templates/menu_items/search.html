@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search</title></head>
+<body>
+    <h1>Search Menu Items</h1>
+    <a href="/">Back to Main Menu</a><br><br>
+
+    <form method="GET">
+        <label for="category">Filter by Category</label><br>
+        <select name="category">
+            <option value="">-- All --</option>
+            <option value="Appetizer" {{ 'selected' if category == 'Appetizer' }}>Appetizer</option>
+            <option value="Main Course" {{ 'selected' if category == 'Main Course' }}>Main Course</option>
+            <option value="Dessert" {{ 'selected' if category == 'Dessert' }}>Dessert</option>
+            <option value="Beverage" {{ 'selected' if category == 'Appetizer' }}>Beverage</option>
+        </select><br><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Item Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Status</th>
+        </tr>
+        {% for menu_item in menu_items %}
+        <tr>
+            <td>{{ menu_item['id'] }}</td>
+            <td>{{ menu_item['itemName'] }}</td>
+            <td>{{ menu_item['category'] }}</td>
+            <td>{{ menu_item['price'] }}</td>
+            <td>{{ menu_item['status'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

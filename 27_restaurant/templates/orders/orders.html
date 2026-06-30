@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>Orders</title></head>
+<body>
+    <h1>Orders</h1>
+    <a href="/orders/add">Add New</a>
+    <a href="/orders/search">Search</a>
+    <a href="/">Back to Main Menu</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Customer Name</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Order Date</th>
+            <th>Actions</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order["id"] }}</td>
+            <td>{{ order["customerName"] }}</td>
+            <td>{{ order["itemName"] }}</td>
+            <td>{{ order["quantity"] }}</td>
+            <td>{{ order["totalPrice"] }}</td>
+            <td>{{ order["orderDate"] }}</td>
+            <td>
+                <a href="/orders/edit/{{ order['id'] }}">Edit</a>
+                <a href="/orders/delete/{{ order['id'] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
